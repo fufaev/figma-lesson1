@@ -31,7 +31,7 @@ jobs:
       - name: Анализ структуры папок и контента
         shell: bash
         env:
-          BASE_REF: ${{ github.base_ref }}
+          BASE_REF: ${{ github.base_ref || 'main' }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           MAX_SIZE_BYTES: "5242880" # 5 MB
         run: |
